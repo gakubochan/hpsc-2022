@@ -8,6 +8,6 @@ int main() {
   for(int i=0; i<8; i++) {
     a = omp_get_thread_num();
     b[0] = omp_get_thread_num();
+    printf("%d %d\n",a,b[0]);
   }
-  printf("%d %d\n",a,b[0]);
 }
