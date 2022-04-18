@@ -1,3 +1,6 @@
+22M30563
+名前が番号のみのファイルは実行ファイルです。
+
 # hpc_lecture
 
 |          | Topic                                | Sample code               |
