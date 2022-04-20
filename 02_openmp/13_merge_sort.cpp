@@ -36,19 +36,21 @@ void merge_sort(std::vector<int>& vec, int begin, int end) {
 int main() {
   int n = 20;
   std::vector<int> vec(n);
-  //#pragma omp parallel
-  {
-  //#pragma omp for
   for (int i=0; i<n; i++) {
     vec[i] = rand() % (10 * n);
     printf("%d ",vec[i]);
   }
   printf("\n");
+
+  #pragma omp parallel
+  {
+  #pragma omp single
   merge_sort(vec, 0, n-1);
-  //#pragma omp for
+  }
+
   for (int i=0; i<n; i++) {
     printf("%d ",vec[i]);
   }
   printf("\n");
   }
-}
+
