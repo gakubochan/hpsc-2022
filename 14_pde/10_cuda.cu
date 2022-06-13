@@ -32,8 +32,8 @@ __global__ void cavity(float *u,float *v,float *b,float *p,float *un,float *vn,f
 		
 	 
 		for(int it = 0; it < nit; it++){
-			pn=p;
-
+			//pn=p;
+			pn[i*ny+j] = p[i*ny+j];
 			/*
 			for(int j=0;j<ny;j++){
 				for(int i=0;i<nx;i++){
@@ -55,7 +55,8 @@ __global__ void cavity(float *u,float *v,float *b,float *p,float *un,float *vn,f
 			p[ny*i+nx-1] = 0;	
 		}
 
-		un = u;
+		//un = u;
+		un[i*ny+j] = u[i*ny+j];
 		/*
 		for(int j=0;j<ny;j++){
 			for(int i=0;i<nx;i++){
@@ -64,8 +65,8 @@ __global__ void cavity(float *u,float *v,float *b,float *p,float *un,float *vn,f
 		}
 		*/
 
-		vn = v;
-
+		//vn = v;
+		vn[i*ny+j] = v[i*ny+j];
 		/*
 		for(int j=0;j<ny;j++){
 			for(int i=0;i<nx;i++){
